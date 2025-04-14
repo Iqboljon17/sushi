@@ -1,0 +1,89 @@
+@import './fonts';
+@import './mixins';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: #161616;
+}
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 51px auto;
+    padding: 0 20px;
+}
+.add {
+    background: linear-gradient(180deg, #FE8A49 0%, #EB6101 100%);
+    color: #fff;
+}
+.set__right-quantity-wrp {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+
+    .set__right-quantity {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        button {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: none;
+            background-color: #ECEEEC;
+            cursor: pointer;
+        }
+    }
+    .set__right_quantity-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        button {
+            padding: 7px 15px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            @include font(500px, 16px, 1.2)
+        }
+    }
+}
+
+.set__righ-buy-button {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    button {
+        display: flex;
+        gap: 11px;
+        align-items: center;
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        p {
+            color: #fff;
+        }
+    }
+
+    .set__right-price {
+        display: flex;
+        flex-direction: column;
+        .set__righ-price1 {
+            @include font(600px, 16px, 1.2);
+            color: #EB6101;
+            letter-spacing: 2%;
+        }
+        .set__righ-price2 {
+            @include font(600px, 32px, 1.2);
+            letter-spacing: 2%;
+        }
+    }
+}
