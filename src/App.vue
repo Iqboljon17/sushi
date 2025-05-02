@@ -2,51 +2,114 @@
   <div>
     <header>
       <div class="header__media-menu">
-        <div class="header__media-menu-nav">
-          <ul>
-            <li>
-              <div class="item">
-                Меню
-                <button @click="openMenuItem()">></button>
-              </div>
-              <ul class="header__menu-nav-item">
-                <li><router-link to="/">Роллы</router-link></li>
-                <li><router-link>Запеченные роллы</router-link></li>
-                <li><router-link>Горячие роллы</router-link></li>
-                <li><router-link to="/setCart">Сеты</router-link></li>
-                <li><router-link>Закуски</router-link></li>
-                <li><router-link>Wok</router-link></li>
-                <li><router-link>Пицца</router-link></li>
-                <li><router-link>Напитки</router-link></li>
-                <li><router-link to="/SiteLocation">site location</router-link></li>
-              </ul>
-            </li>
-          </ul>
-          
-          <div class="header__menu-nav-item">
-            <li>Роллы</li>
-            <li>Роллы</li>
-            <li>Роллы</li>
-            <li>Роллы</li>
-            <li>Роллы</li>
+        <div class="header__media-menu-wrp">
+          <div class="header__media-menu-item">
+            <h2 class="header__media-menu-title">Меню</h2>
+            <button class="media__menu-btn" @click="openMenuItem()">></button>
+          </div>
+          <div class="header__media-menu-links">
+            <ul>
+              <li class="header__media-menu-desc">
+                <router-link to="/Login">Login</router-link>
+                <router-link to="/">Роллы</router-link>
+                <router-link>Зап. роллы</router-link>
+                <router-link>Гор. роллы</router-link>
+                <router-link to="/setCart">Сеты</router-link>
+                <router-link>Закуски</router-link>
+                <router-link>Wok</router-link>
+                <router-link>Пицца</router-link>
+                <router-link>Напитки</router-link>
+                <router-link to="SiteLocation">Site Location</router-link>
+              </li>
+            </ul>
           </div>
         </div>
+        <div class="header__media-menu-wrp">
+          <div class="header__media-menu-item2">
+            <h2 class="header__media-menu-title">Акции и промокоды</h2>
+            <button class="media__menu-btn" @click="openMenuItemfr()">></button>
+          </div>
+          <div class="header__media-menu-links2">
+            <ul>
+              <li class="header__media-menu-desc">
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__media-menu-wrp">
+          <div class="header__media-menu-item3">
+            <h2 class="header__media-menu-title">Доставка и оплата</h2>
+            <button class="media__menu-btn" @click="openMenuItemsd()">></button>
+          </div>
+          <div class="header__media-menu-links3">
+            <ul>
+              <li class="header__media-menu-desc">
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__media-menu-wrp">
+          <div class="header__media-menu-item4">
+            <h2 class="header__media-menu-title">Адреса ресторанов</h2>
+            <button class="media__menu-btn" @click="openMenuItemrd()">></button>
+          </div>
+          <div class="header__media-menu-links4">
+            <ul>
+              <li class="header__media-menu-desc">
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__media-menu-wrp">
+          <div class="header__media-menu-item5">
+            <h2 class="header__media-menu-title">Контакты</h2>
+            <button class="media__menu-btn" @click="openMenuItemfrs()">></button>
+          </div>
+          <div class="header__media-menu-links5">
+            <ul>
+              <li class="header__media-menu-desc">
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+                <router-link>edfv</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <button @click="removeMediaMenu()" class="closeMeu">
           <img src="./assets/images/svg/icons8-close (1).svg" alt="" />
         </button>
       </div>
+      
       <div class="container">
         <button @click="addMediaMenu()" class="header__menu">
           <img src="./assets/images/svg/menu.svg" alt="" />
         </button>
-        <button class="header__button">
+        <router-link to="/Login" class="header__button">
           <img
             class="header__button-img"
             src="./assets/images/svg/header-btn-img.svg"
             alt=""
           />
-          <span class="header__button-text">Вход</span>
-        </button>
+          <span class="header__button-text">Login</span>
+        </router-link>
 
         <div class="header__info">
           <router-link to="/SiteLocation">
@@ -81,20 +144,20 @@
           </a>
         </div>
 
-        <div class="header__cart">
+        <router-link to="/CartInfo" class="header__cart">
           <div class="header__cart-img">
             <img src="./assets/images/svg/cart.svg" alt="" class="" />
-            <span>0</span>
+            <span>{{ cartLength }}</span>
           </div>
           <div class="header__cart-info">
             <p>В корзине</p>
-            <h2>9 999 ₽</h2>
+            <h2>{{ cartTotalPrice }} ₽</h2>
           </div>
-        </div>
+        </router-link>
 
-        <div class="header__media-cart">
+        <router-link to="/CartInfo" class="header__media-cart">
           <img src="./assets/images/svg/корзина.svg" alt="" />
-        </div>
+        </router-link>
       </div>
     </header>
 
@@ -108,10 +171,10 @@
             </li>
             <li class="nav__item"><router-link>Горячие роллы</router-link></li>
             <li class="nav__item">
-              <router-link to="/setCart">Сеты</router-link>
+              <router-link>Сеты</router-link>
             </li>
             <li class="nav__item"><router-link>Закуски</router-link></li>
-            <li class="nav__item"><router-link>Wok</router-link></li>
+            <li class="nav__item"><router-link>Work</router-link></li>
             <li class="nav__item"><router-link>Пицца</router-link></li>
             <li class="nav__item"><router-link>Напитки</router-link></li>
           </ul>
@@ -189,6 +252,29 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
+import router from './router';
+import { useCounterStore } from "@/stores/store";
+import { computed } from "vue";
+
+const store = useCounterStore();
+
+const cartLength = computed(() => {
+  return store.cart.reduce((acc, item) => acc + item.quantity, 0);
+});
+const cartTotalPrice = computed(() => {
+  return store.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+});
+
+onMounted(() => {
+  const savedCart = localStorage.getItem("cart");
+  if (savedCart) {
+    store.cart = JSON.parse(savedCart);
+  }
+});
+
+
+
 function addMediaMenu() {
   const MediaMenu = document.querySelector(".header__media-menu");
   MediaMenu.classList.add("header__media-menu-active");
@@ -200,9 +286,26 @@ function removeMediaMenu() {
 }
 
 function openMenuItem() {
-  const menuItem = document.querySelector(".header__menu-nav-item");
-  menuItem.classList.toggle("header__menu-nav-item-active");
+  const menuItem = document.querySelector(".header__media-menu-links");
+  menuItem.classList.toggle("header__media-menu-links-active");
 }
+function openMenuItemfr() {
+  const menuItem = document.querySelector(".header__media-menu-links2");
+  menuItem.classList.toggle("header__media-menu-links-active2");
+}
+function openMenuItemsd() {
+  const menuItem = document.querySelector(".header__media-menu-links3");
+  menuItem.classList.toggle("header__media-menu-links-active3");
+}
+function openMenuItemrd() {
+  const menuItem = document.querySelector(".header__media-menu-links4");
+  menuItem.classList.toggle("header__media-menu-links-active4");
+}
+function openMenuItemfrs() {
+  const menuItem = document.querySelector(".header__media-menu-links5");
+  menuItem.classList.toggle("header__media-menu-links-active5");
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -210,7 +313,7 @@ function openMenuItem() {
 
 // Container base style
 .container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -221,11 +324,141 @@ header {
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
+.header__media-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .header__media-menu-wrp {
+    .header__media-menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      margin-top: 50px;
+
+   
+  }
+  .header__media-menu-links {
+    display: none;
+    margin-top: 10px;
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
+  .header__media-menu-links-active {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  }
+  .header__media-menu-wrp {
+ 
+    .header__media-menu-item2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+  }
+  .header__media-menu-links2 {
+    display: none;
+    margin-top: 10px;
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
+  .header__media-menu-links-active2 {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  }
+  .header__media-menu-wrp {
+  
+    .header__media-menu-item3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+  }
+  .header__media-menu-links3 {
+    display: none;
+    margin-top: 10px;
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
+  .header__media-menu-links-active3 {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  }
+  .header__media-menu-wrp {
+ 
+    .header__media-menu-item4 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+  }
+  .header__media-menu-links4 {
+    display: none;
+    margin-top: 10px;
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
+  .header__media-menu-links-active4 {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  }
+  .header__media-menu-wrp {
+ 
+    .header__media-menu-item5 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+  }
+  .header__media-menu-links5 {
+    display: none;
+    margin-top: 10px;
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
+  .header__media-menu-links-active5 {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  }
+}
+
+
   .header__media-menu {
+    padding: 20px;
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     background-color: #fff;
     box-shadow: 0px 5px 15px 0px #0000001a;
     transform: translateX(-100%);
@@ -311,6 +544,9 @@ header {
       display: none;
       @media (max-width: 570px) {
         display: flex;
+        background: none;
+        border: none;
+        cursor: pointer;
       }
     }
 

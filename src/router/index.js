@@ -9,15 +9,24 @@ const router = createRouter({
       component: ()=> import('../views/Index.vue')
     },
     {
-      path: '/setCart',
-      name: 'setCart',
-      component: () => import('../views/Set.vue'),
-    },
-    {
       path: '/SiteLocation',
       name: 'SiteLocation',
       component: () => import('../views/SiteLocation.vue'),
     },
+    {
+      path: '/cartInfo',
+      name: 'cartInfo',
+      component: () => import('../views/CartInfo.vue'),
+    },
+    {
+      path: '/Login',
+      name: 'Login',
+      component: () => import('../views/Login.vue'),
+    },
+    
+    
+
+    
   ],
 })
 
