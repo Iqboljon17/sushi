@@ -50,7 +50,7 @@
                 type="button"
                 class="view__Password"
               >
-                <img src="../assets/images/svg/eye_icon.svg" alt="" />
+                <img src="" alt="" />
               </button>
             </div>
           </div>
