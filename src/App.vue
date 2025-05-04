@@ -136,7 +136,7 @@
           <a href="https://www.instagram.com/1q8oljon/">
             <img src="./assets/images/svg/instagram.svg" alt="" />
           </a>
-          <a href="#">
+          <a href="https://www.youtube.com/watch?v=PQSiuxEcoOo">
             <img src="./assets/images/svg/you tube.svg" alt="" />
           </a>
           <a href="#">
